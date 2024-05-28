@@ -19,10 +19,12 @@ jobs:
           node-version: '20'
         
       - name: Install dependencies
-        run: cd vivweld-app | npm install
+        run: npm install
+        working-directory: vivweld-app
 
       - name: Build the project
-        run: cd vivweld-app | npm run build
+        run: npm run build
+        working-directory: vivweld-app
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
